@@ -1,3 +1,5 @@
+// ignore_for_file: unused_label
+
 void main(List<String> args) {
   var sum = 0;
   var amoutEven = 0;
