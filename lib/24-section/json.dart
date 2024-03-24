@@ -66,15 +66,32 @@ class User {
 
   // factory: O método é declarado como uma fábrica, o que significa que ele pode retornar
   //uma nova instância da classe ou uma instância existente.
-  factory User.fromJson(Map<String, dynamic> jsonData) {
-    return User(
-      name: jsonData['name'],
-      age: jsonData['age'],
-      email: jsonData['email'],
-      id: jsonData['id'],
-      phone: jsonData['phone'],
-    );
-  }
+  // factory User.fromJson(Map<String, dynamic> jsonData) {
+  //   return User(
+  //     name: jsonData['name'],
+  //     age: jsonData['age'],
+  //     email: jsonData['email'],
+  //     id: jsonData['id'],
+  //     phone: jsonData['phone'],
+  //   );
+  // }
+
+  // Construtor com lista de inicialização, define os parâmetros antes de executar o escopo do construtor
+  // User.fromJson(Map<String, dynamic> jsonData)
+  //     : name = jsonData['name'],
+  //       age = jsonData['age'],
+  //       email = jsonData['email'],
+  //       id = jsonData['id'],
+  //       phone = jsonData['phone'] {}
+
+  // Construtor com lista de inicialização, usa this para passar os parâmetros para o construtor default
+  User.fromJson(Map<String, dynamic> jsonData)
+      : this(
+            name: jsonData['name'],
+            age: jsonData['age'],
+            email: jsonData['email'],
+            id: jsonData['id'],
+            phone: jsonData['phone']);
 
   @override
   String toString() {
